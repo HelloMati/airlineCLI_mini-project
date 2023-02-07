@@ -78,8 +78,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter passenger information");
         String newPassenger = scanner.nextLine();
-        Passenger addedPassenger = new Passenger(newPassenger);
-        airport.bookPassengerOnFlight(addedPassenger);
+//        Passenger addedPassenger = new Passenger();
+//        airport.bookPassengerOnFlight(addedPassenger, new Flight("London"));
     }
 
     public static void bookFlight() {
@@ -92,7 +92,7 @@ public class Main {
         // use airport.bookPassengerOntoFlight method
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter passenger details");
-        airport.bookPassengerOnFlight(new Passenger);
+//        airport.bookPassengerOnFlight(new Passenger);
     }
 
     public static void cancelFlight() {
@@ -101,7 +101,7 @@ public class Main {
         airport.displayAllAvailableFlights();
         Scanner scanner = new Scanner(System.in);
         int flightBoard = scanner.nextInt();
-        airport.cancelFlight(flightBoard);
+//        airport.cancelFlight(flightBoard);
     }
 
 }
