@@ -1,10 +1,12 @@
 package Class;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Airport {
    // declare
    private ArrayList<Flight> flights;
    private ArrayList<Passenger> passengers;
+
 
    // constructor
    public Airport() {
@@ -47,12 +49,20 @@ public class Airport {
    public void cancelFlight(Flight flight){
       this.flights.remove(flight);
    }
-   public void addFlight(Flight flight){ this.flights.add(flight);
-   }
+   public void addFlight(Flight flight){
+//      flight = new Flight(flight.destination);
+//      flights.add(flight);
+      this.flights.add(flight);}
 
    // method to display flights
    public void displayAllAvailableFlights(){
-      System.out.println(this.flights);
-      // for loop
+      System.out.println("These are all the flights available for you to book: ");
+      // for loop to display all the flights using i for each flight
+      // then print the destination after = no need to test, just refer to in main
+      for (int i = 0; i < flights.size(); i++){
+         Flight flight = flights.get(i);
+         System.out.println(i + 1 + ":" + flight.getDestination());
+      }
    }
+
 }
