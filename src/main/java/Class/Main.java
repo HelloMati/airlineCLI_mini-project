@@ -32,19 +32,19 @@ public class Main {
                 int option = Integer.parseInt(userInput);
                 switch (option) {
                     case 1: // displaying all the available flights
-                            method1();
+                            displayFlights();
                             break;
                     case 2: // add new flights to system
-                            method2();
+                            addNewFlight();
                             break;
                     case 3: // add new passenger
-                            method3();
+                            addNewPassenger();
                             break;
                     case 4: // book a passenger on to a flight
-                            method4();
+                            bookFlight();
                             break;
                     case 5: // cancel flight
-                            method5();
+                            cancelFlight();
                             break;
                     default: throw new Exception("Invalid option entered.");
 
@@ -54,15 +54,17 @@ public class Main {
                 scanner.nextLine(); // so it doesn't keep looping
             }
         }
+   // if the user does not enter 1-5, it throws in the exception, telling them they entered something wrong
+// loops them back to the options picking menu
 
     }
 
-    public static void method1() {
+    public static void displayFlights() {
         System.out.println("You selected option 1: ");
         airport.displayAllAvailableFlights();
     }
 
-    public static void method2() {
+    public static void addNewFlight() {
         System.out.println("You selected option 2. Add new flights to the airport system");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter flight destination");
@@ -71,35 +73,37 @@ public class Main {
         airport.addFlight(addedFlight);
     }
 
-    public static void method3() {
+    public static void addNewPassenger() {
         System.out.println("You selected option 3. Add a new passenger to the airport system");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter passenger name");
-        String passenger = scanner.nextLine();
-//        Passenger addPassenger = new Passenger()
-
+        System.out.println("Enter passenger information");
+        String newPassenger = scanner.nextLine();
+        Passenger addedPassenger = new Passenger(newPassenger);
+        airport.bookPassengerOnFlight(addedPassenger);
     }
 
-    public static void method4() {
-        System.out.println("You selected option 4.");
+    public static void bookFlight() {
+        System.out.println("You selected option 4. Book a passenger on to flight");
         // first print all available flights
         System.out.println("Please select an option from the following flights:");
         airport.displayAllAvailableFlights();
         //scanner takes in input
         //using input find out which passenger and which flight is relevant
         // use airport.bookPassengerOntoFlight method
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter passenger details");
+        airport.bookPassengerOnFlight(new Passenger);
     }
 
-    public static void method5() {
+    public static void cancelFlight() {
         System.out.println("You selected option 5.");
+        System.out.println("Please select a flight to cancel from the system");
+        airport.displayAllAvailableFlights();
+        Scanner scanner = new Scanner(System.in);
+        int flightBoard = scanner.nextInt();
+        airport.cancelFlight(flightBoard);
     }
 
-    // if the user does not enter 1-5, it throws in the exception, telling them they entered something wrong
-// loops them back to the options picking menu
-
-
-// main method
-// scanners
 }
 
 
