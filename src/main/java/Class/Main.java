@@ -126,6 +126,7 @@ public class Main {
         Passenger addedPassenger = new Passenger(name, email, UUID.randomUUID());
 
         System.out.println("\n" + name + " is now added to the system.\n");
+        System.out.println("What would you like to do next? Select number from 1-5: \n");
     }
 
     public static void bookFlight() {
@@ -153,7 +154,7 @@ public class Main {
 
         if (chosenFlight != null){
             airport.bookPassengerOnFlight(addedPassenger, chosenFlight);
-            System.out.println("Passenger successfully added to flight to " + flightDestination + "\n");
+            System.out.println(addedPassenger + " successfully added to flight to " + flightDestination + "\n");
         } else {
             System.out.println("We do not have flights to " + flightDestination + " currently.\n");
         }
@@ -172,7 +173,7 @@ public class Main {
 
         if (chosenFlight != null){
             airport.cancelFlight(chosenFlight);
-            System.out.println("Flight successfully cancelled. \n");
+            System.out.println("Flight to " + chosenFlight + " successfully cancelled. \n");
         } else {
             System.out.println("Cannot cancel flight as there are no available flights to this destination currently.\n");
         }
