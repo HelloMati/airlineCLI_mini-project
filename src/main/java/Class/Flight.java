@@ -11,7 +11,7 @@ public class Flight {
     public Flight (String destination) {
         this.destination = destination;
         this.passengers = new ArrayList<>();
-        this.flightId = flightid; // we need to add the flight number generator here
+        int flightId; // we need to add the flight number generator here
     }
 
 
@@ -33,5 +33,21 @@ public class Flight {
 
 
 
+    // methods to book and cancel passengers from flight (for airport ticket stand/website)
+    public void addPassenger(Passenger passenger) {
+        this.passengers.add(passenger);
+    }
+    public void removePassenger(Passenger passenger) {
+        this.passengers.remove(passenger);
+    }
 
+
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "destination= '" + destination + '\'' +
+                ", flightId= " + flightId +
+                ", passengers= " + passengers +
+                '}';
+    }
 }

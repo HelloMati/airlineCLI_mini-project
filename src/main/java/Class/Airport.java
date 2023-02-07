@@ -1,17 +1,18 @@
 package Class;
-
 import java.util.ArrayList;
 
 public class Airport {
    // declare
    private ArrayList<Flight> flights;
+   private ArrayList<Passenger> passengers;
 
    // constructor
-   public Airport(ArrayList<Flight> flights) {
-      this.flights = flights;
+   public Airport() {
+      this.flights = new ArrayList<>();
+      this.passengers = new ArrayList<>();
    }
 
-   // getter and setter
+   // getters and setters
 
    public ArrayList<Flight> getFlights() {
       return flights;
@@ -21,14 +22,37 @@ public class Airport {
       this.flights = flights;
    }
 
-   
-   //both methods below will be tested in AirportTest class
-   // add and remove flights "book" and "cancel"
-   
-   
-   
+   public ArrayList<Passenger> getPassengers() {
+      return passengers;
+   }
+
+   public void setPassenger(ArrayList<Passenger> passengers) {
+      this.passengers = passengers;
+   }
+
+
+   //all methods below will be tested in AirportTest class
+
    // book passengers on to flights
-   public void bookPassengerOnToFlight(Passenger passenger){
-      
+   public void bookPassengerOnFlight(Passenger passenger, Flight flight){
+      flight.addPassenger(passenger);
+   }
+
+   // cancel passengers from flights
+   public void cancelPassengerBooking(Passenger passenger, Flight flight){
+      flight.removePassenger(passenger);
+   }
+
+   // cancel whole flight
+   public void cancelFlight(Flight flight){
+      this.flights.remove(flight);
+   }
+   public void addFlight(Flight flight){ this.flights.add(flight);
+   }
+
+   // method to display flights
+   public void displayAllAvailableFlights(){
+      System.out.println(this.flights);
+      // for loop
    }
 }

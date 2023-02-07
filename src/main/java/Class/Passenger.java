@@ -1,17 +1,21 @@
 package Class;
 
+import java.util.ArrayList;
+
 public class Passenger {
    private String name;
-   private int contactInfo;
+   private String contactInfo;
    private int Id;
+   private ArrayList<Flight> flights;
 
-   public Passenger(String name,int contactInfo, int id){
-       this.name = name;
-       this.contactInfo = contactInfo;
-       this.Id = id;
-   }
 
-   public int getId(){
+    public Passenger(String name, String contactInfo, int id) {
+        this.name = name;
+        this.contactInfo = contactInfo;
+        Id = id;
+    }
+
+    public int getId(){
                 return Id;
         }
    public String getName(){
