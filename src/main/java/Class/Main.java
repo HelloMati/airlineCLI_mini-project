@@ -92,7 +92,7 @@ public class Main {
         // use airport.bookPassengerOntoFlight method
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter passenger details");
-//        airport.bookPassengerOnFlight(new Passenger);
+        airport.bookPassengerOnFlight(new Passenger("Aya", "ayaaya@hotmail.com", 357437), new Flight("Dubai"));
     }
 
     public static void cancelFlight() {
@@ -100,8 +100,8 @@ public class Main {
         System.out.println("Please select a flight to cancel from the system");
         airport.displayAllAvailableFlights();
         Scanner scanner = new Scanner(System.in);
-        int flightBoard = scanner.nextInt();
-//        airport.cancelFlight(flightBoard);
+        int flights = scanner.nextInt();
+//        airport.cancelFlight(Flight);
     }
 
 }
