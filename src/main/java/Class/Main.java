@@ -103,7 +103,7 @@ public class Main {
         Flight addedFlight = new Flight(flightDestination);
         airport.addFlight(addedFlight);
 
-        System.out.println("\nFlight successfully added to System. \n");
+        System.out.println("\nFlight to " +flightDestination + " successfully added to System. \n");
         System.out.println("What would you like to do next? Select number from 1-5: \n");
     }
 
@@ -153,9 +153,9 @@ public class Main {
 
         if (chosenFlight != null){
             airport.bookPassengerOnFlight(addedPassenger, chosenFlight);
-            System.out.println("Passenger successfully added to flight. \n");
+            System.out.println("Passenger successfully added to flight to " + flightDestination + "\n");
         } else {
-            System.out.println("We do not have flights to this destination currently.\n");
+            System.out.println("We do not have flights to " + flightDestination + " currently.\n");
         }
         System.out.println("What would you like to do next? Select number from 1-5: \n");
     }
@@ -169,7 +169,14 @@ public class Main {
         String flightDestination = scanner.nextLine();
 
         Flight chosenFlight = airport.getFlight(flightDestination);
-        airport.cancelFlight(chosenFlight);
+
+        if (chosenFlight != null){
+            airport.cancelFlight(chosenFlight);
+            System.out.println("Flight successfully cancelled. \n");
+        } else {
+            System.out.println("Cannot cancel flight as there are no available flights to this destination currently.\n");
+        }
+        System.out.println("What would you like to do next? Select number from 1-5: \n");
     }
 
 }
