@@ -1,28 +1,29 @@
 package Class;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Passenger {
    private String name;
-   private String contactInfo;
-   private int Id;
+   private String email;
+   private UUID id;
    private ArrayList<Flight> flights;
 
 
-    public Passenger(String name, String contactInfo, int id) {
+    public Passenger(String name, String email, UUID uuid) {
         this.name = name;
-        this.contactInfo = contactInfo;
-        Id = id;
+        this.email = email;
+        this.id = UUID.randomUUID();
     }
 
-   public int getId(){
-                return Id;
-        }
    public String getName(){
                 return name;
         }
-   public void setId(int id) {
-                this.Id = id;
+   public UUID getId(){
+        return id;
+    }
+   public void setId(UUID id) {
+                this.id = id;
         }
 }
 

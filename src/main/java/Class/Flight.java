@@ -1,17 +1,18 @@
 package Class;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Flight {
 
     String destination;
-    int flightId;
+    UUID flightId;
     ArrayList<Passenger> passengers;
 
     public Flight (String destination) {
         this.destination = destination;
         this.passengers = new ArrayList<>();
-        int flightId; // we need to add the flight number generator here
+        this.flightId = UUID.randomUUID();
     }
 
 
@@ -23,7 +24,7 @@ public class Flight {
         this.destination = destination;
     }
 
-    public int getFlightId() {
+    public UUID getFlightId() {
         return flightId;
     }
 

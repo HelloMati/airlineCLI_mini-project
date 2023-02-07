@@ -1,6 +1,5 @@
 package Class;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Airport {
    // declare
@@ -62,4 +61,12 @@ public class Airport {
       }
    }
 
+   public Flight getFlight(String flightDestination) {
+      for (Flight flight : flights) {
+         if (flight.getDestination().equalsIgnoreCase(flightDestination)) {
+            return flight;
+         }
+      }
+      return null;
+   }
 }

@@ -3,6 +3,9 @@ import Class.Flight;
 import Class.Airport;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.UUID;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class AirportTest {
@@ -19,7 +22,8 @@ public class AirportTest {
     // tests for booking and cancelling a passenger on to / from flight
     @Test
     public void testBookPassengerOnFlight(){
-        Passenger passenger = new Passenger("John Smith", "me@hotmail.com", 3426739);
+        UUID id = UUID.randomUUID();
+        Passenger passenger = new Passenger("John Smith", "me@hotmail.com", UUID.randomUUID());
         Flight flight = new Flight("Hawaii");
 
         // book passenger on to the flight and test it
@@ -30,7 +34,8 @@ public class AirportTest {
     }
     @Test
     public void testCancelPassengerBooking(){
-        Passenger passenger = new Passenger("John Smith", "me@hotmail.com", 3426739);
+        UUID id = UUID.randomUUID();
+        Passenger passenger = new Passenger("John Smith", "me@hotmail.com", UUID.randomUUID());
         Flight flight = new Flight("Hawaii");
 
         airport.addFlight(flight);
