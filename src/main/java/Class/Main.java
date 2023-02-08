@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 //        int userOption = 0;
-        createFlights();
+        makeFlights();
 //        readPassengersFromFile("src/main/passengers.txt");
         Scanner scanner = new Scanner(System.in);
 
@@ -58,7 +58,7 @@ public class Main {
 
     }
 
-    public static void createFlights() {
+    public static void makeFlights() {
         List<String> destinations = readDestinationsFromFile("src/main/flights.txt");
         for (String destination : destinations) {
             Flight flight = new Flight(destination);
