@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class Passenger {
-   private String name;
-   private String email;
-   private UUID id;
-   private ArrayList<Flight> flights;
+    private String name;
+    private String email;
+    private UUID id;
+    private ArrayList<Flight> flights;
 
 
     public Passenger(String name, String email, UUID uuid) {
@@ -16,16 +16,18 @@ public class Passenger {
         this.id = UUID.randomUUID();
     }
 
-   public String getName(){
-                return name;
-        }
-   public UUID getId(){
+    public String getName(){
+        return name;
+    }
+    public UUID getId(){
         return id;
     }
-   public void setId(UUID id) {
-                this.id = id;
-        }
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString(){
+        return "Passenger [name=" + name + ", email=" + email + ", id=" + id + "]";
+    }
 }
-
-
-

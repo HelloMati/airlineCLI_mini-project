@@ -46,7 +46,6 @@ public class AirportTest {
         assertThat(flight.getPassengers().contains(passenger)).isFalse();
     }
 
-
     // tests for adding and cancelling flights
     @Test
     public void testAddFlight(){
@@ -64,7 +63,18 @@ public class AirportTest {
         assertThat(airport.getFlights().contains(flight)).isFalse();
     }
 
+    @Test
+    public void testSearchFlightsByDestination(){
+        Flight flight1 = new Flight("Hawaii");
+        Flight flight2 = new Flight("Barbados");
 
+        airport.addFlight(flight1);
+        airport.addFlight(flight2);
+
+        assertThat(airport.searchFlightsByDestination("Hawaii").size()).isEqualTo(1);
+        assertThat(airport.searchFlightsByDestination("Hawaii").get(0).getDestination()).isEqualTo("Hawaii");
+        assertThat(airport.searchFlightsByDestination("Barbados").size()).isEqualTo(1);
+        assertThat(airport.searchFlightsByDestination("Barbados").get(0).getDestination()).isEqualTo("Barbados");
+    }
 
 }
-

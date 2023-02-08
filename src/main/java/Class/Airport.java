@@ -1,5 +1,6 @@
 package Class;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Airport {
    // declare
@@ -31,6 +32,7 @@ public class Airport {
       this.passengers = passengers;
    }
 
+//   public void addPassenger(Passenger passenger) { this.passengers.add(passenger);}
 
    //all methods below will be tested in AirportTest class
 
@@ -49,6 +51,26 @@ public class Airport {
       this.flights.remove(flight);
    }
    public void addFlight(Flight flight){ this.flights.add(flight);}
+
+   // method to search flights
+   public void searchFlights(String destination) {
+      System.out.println("Flights to " + destination + ": ");
+      for (Flight flight : flights) {
+         if (flight.getDestination().equals(destination)) {
+            System.out.println(flight);
+         }
+      }
+   }
+
+   public List<Flight> searchFlightsByDestination(String destination){
+      List<Flight> flights = new ArrayList<>();
+      for(Flight flight: this.flights){
+         if(flight.getDestination().equalsIgnoreCase(destination)){
+            flights.add(flight);
+         }
+      }
+      return flights;
+   }
 
    // method to display flights
    public void displayAllAvailableFlights(){
