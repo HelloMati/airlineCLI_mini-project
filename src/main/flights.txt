@@ -1,19 +1,19 @@
-Flight flight1 = new Flight("Hawaii");
-Flight flight2 = new Flight("Barbados");
-Flight flight3 = new Flight("Tahiti");
-Flight flight4 = new Flight("Paris");
-Flight flight5 = new Flight("Dubai");
-Flight flight6 = new Flight("Berlin");
-Flight flight7 = new Flight("Istanbul");
-Flight flight8 = new Flight("Mallorca");
-Flight flight10 = new Flight("Rome");
-Flight flight11 = new Flight("Seoul");
-Flight flight12 = new Flight("Tokyo");
-Flight flight13 = new Flight("New Delhi");
-Flight flight14 = new Flight("Mumbai");
-Flight flight15 = new Flight("Amsterdam");
-Flight flight16 = new Flight("Shanghai");
-Flight flight17 = new Flight("Hong Kong");
-Flight flight18 = new Flight("New York");
-Flight flight19 = new Flight("San Paulo");
-Flight flight20 = new Flight("Monte Carlo");
+Hawaii
+Barbados
+Tahiti
+Paris
+Dubai
+Berlin
+Istanbul
+Mallorca
+Rome
+Seoul
+Tokyo
+New Delhi
+Mumbai
+Amsterdam
+Shanghai
+Hong Kong
+New York
+San Paulo
+Monte Carlo

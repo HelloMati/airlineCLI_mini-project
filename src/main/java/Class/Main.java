@@ -154,7 +154,7 @@ public class Main {
 
         if (chosenFlight != null){
             airport.bookPassengerOnFlight(addedPassenger, chosenFlight);
-            System.out.println(addedPassenger + " successfully added to flight to " + flightDestination + "\n");
+            System.out.println(addedPassenger.getName() + " successfully added to flight to " + flightDestination + "\n");
         } else {
             System.out.println("We do not have flights to " + flightDestination + " currently.\n");
         }

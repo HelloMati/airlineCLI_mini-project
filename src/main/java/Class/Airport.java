@@ -57,7 +57,10 @@ public class Airport {
       System.out.println("Flights to " + destination + ": ");
       for (Flight flight : flights) {
          if (flight.getDestination().equals(destination)) {
-            System.out.println(flight);
+            System.out.println(flight.getDestination());
+         } else {
+            System.out.println("Sorry, there are currently no available flights to " + destination);
+            break;
          }
       }
    }
